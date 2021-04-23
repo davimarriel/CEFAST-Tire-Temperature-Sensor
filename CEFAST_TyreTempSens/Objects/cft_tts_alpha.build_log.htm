@@ -1,0 +1,254 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.34.0.0
+Copyright (C) 2021 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Davi Marriel, Formula CEFAST, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.34.0.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.16
+Assembler:       Armasm.exe V6.16
+Linker/Locator:  ArmLink.exe V6.16
+Library Manager: ArmAr.exe V6.16
+Hex Converter:   FromElf.exe V6.16
+CPU DLL:         SARMCM3.DLL V5.34.0.0
+Dialog DLL:      DCM.DLL V1.17.3.0
+Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.0.8.0
+Dialog DLL:      TCM.DLL V1.48.0.0
+ 
+<h2>Project:</h2>
+C:\Users\davij\Documents\CEFET\Fórmula\CEFAST_TyreTempSens\cft_tts_alpha.uvprojx
+Project File Date:  04/08/2021
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.16', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
+Build target 'Target 1'
+compiling MLX90621.c...
+MLX90621.c(1): warning: In file included from...
+../CEFAST_TyreTempSens\I2C_F103.h(10): warning: no newline at end of file [-Wnewline-eof]
+void I2C_Read(uint8_t addr, uint8_t *data, int size);
+                                                     ^
+MLX90621.c(3): warning: In file included from...
+../CEFAST_TyreTempSens\MLX90621.h(34): warning: this function declaration is not a prototype [-Wstrict-prototypes]
+int MLX90621_GetCurResolution();
+                             ^
+                              void
+../CEFAST_TyreTempSens\MLX90621.h(36): warning: this function declaration is not a prototype [-Wstrict-prototypes]
+int MLX90621_GetRefreshRate();  
+                           ^
+                            void
+../CEFAST_TyreTempSens\MLX90621.h(40): warning: no newline at end of file [-Wnewline-eof]
+int MLX90621_I2CWrite(uint8_t slaveAddr, uint8_t command, uint8_t checkValue, uint16_t data);
+                                                                                             ^
+../CEFAST_TyreTempSens\MLX90621.h(9): warning: padding struct 'paramsMLX90621' with 2 bytes to align 'kT1' [-Wpadded]
+  float kT1;
+        ^
+MLX90621.c(97): warning: implicit conversion loses integer precision: 'int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+        error = MLX90621_I2CWrite(0x60, 0x03, 0x55, value);        
+                ~~~~~~~~~~~~~~~~~                   ^~~~~
+MLX90621.c(105): warning: no previous prototype for function 'MLX90621_GetCurResolution' [-Wmissing-prototypes]
+int MLX90621_GetCurResolution()
+    ^
+../CEFAST_TyreTempSens\MLX90621.h(34): note: this declaration is not a prototype; add 'void' to make it a prototype for a zero-parameter function
+int MLX90621_GetCurResolution();
+    ^
+                              void
+MLX90621.c(105): warning: this old-style function definition is not preceded by a prototype [-Wstrict-prototypes]
+int MLX90621_GetCurResolution()
+                             ^
+MLX90621.c(136): warning: implicit conversion loses integer precision: 'int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+        error = MLX90621_I2CWrite(0x60, 0x03, 0x55, value);        
+                ~~~~~~~~~~~~~~~~~                   ^~~~~
+MLX90621.c(144): warning: no previous prototype for function 'MLX90621_GetRefreshRate' [-Wmissing-prototypes]
+int MLX90621_GetRefreshRate()
+    ^
+../CEFAST_TyreTempSens\MLX90621.h(36): note: this declaration is not a prototype; add 'void' to make it a prototype for a zero-parameter function
+int MLX90621_GetRefreshRate();  
+    ^
+                            void
+MLX90621.c(144): warning: this old-style function definition is not preceded by a prototype [-Wstrict-prototypes]
+int MLX90621_GetRefreshRate()
+                           ^
+MLX90621.c(176): warning: implicit conversion loses floating-point precision: 'double' to 'float' [-Wimplicit-float-conversion]
+    ta4 = (ta + 273.15);
+        ~  ~~~^~~~~~~~
+MLX90621.c(176): warning: implicit conversion increases floating-point precision: 'float' to 'double' [-Wdouble-promotion]
+    ta4 = (ta + 273.15);
+           ^~ ~
+MLX90621.c(179): warning: implicit conversion loses floating-point precision: 'double' to 'float' [-Wimplicit-float-conversion]
+    tr4 = (tr + 273.15);
+        ~  ~~~^~~~~~~~
+MLX90621.c(179): warning: implicit conversion increases floating-point precision: 'float' to 'double' [-Wdouble-promotion]
+    tr4 = (tr + 273.15);
+           ^~ ~
+MLX90621.c(212): warning: implicit conversion loses floating-point precision: 'double' to 'float' [-Wimplicit-float-conversion]
+        Sx = sqrt(sqrt(Sx)) * params->ksTo;            
+           ~ ~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+MLX90621.c(212): warning: implicit conversion increases floating-point precision: 'const float' to 'double' [-Wdouble-promotion]
+        Sx = sqrt(sqrt(Sx)) * params->ksTo;            
+                            ~ ~~~~~~~~^~~~
+MLX90621.c(212): warning: implicit conversion increases floating-point precision: 'float' to 'double' [-Wdouble-promotion]
+        Sx = sqrt(sqrt(Sx)) * params->ksTo;            
+                  ~~~~ ^~
+MLX90621.c(214): warning: implicit conversion loses floating-point precision: 'double' to 'float' [-Wimplicit-float-conversion]
+        To = sqrt(sqrt(irData/(alphaCompensated * (1 - params->ksTo * 273.15) + Sx) + taTr)) - 273.15;                     
+           ~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~
+MLX90621.c(214): warning: implicit conversion increases floating-point precision: 'float' to 'double' [-Wdouble-promotion]
+        To = sqrt(sqrt(irData/(alphaCompensated * (1 - params->ksTo * 273.15) + Sx) + taTr)) - 273.15;                     
+                                                                                    ~ ^~~~
+MLX90621.c(214): warning: implicit conversion increases floating-point precision: 'float' to 'double' [-Wdouble-promotion]
+        To = sqrt(sqrt(irData/(alphaCompensated * (1 - params->ksTo * 273.15) + Sx) + taTr)) - 273.15;                     
+                                                                              ~ ^~
+MLX90621.c(214): warning: implicit conversion increases floating-point precision: 'const float' to 'double' [-Wdouble-promotion]
+        To = sqrt(sqrt(irData/(alphaCompensated * (1 - params->ksTo * 273.15) + Sx) + taTr)) - 273.15;                     
+                                                       ~~~~~~~~^~~~ ~
+MLX90621.c(214): warning: implicit conversion increases floating-point precision: 'float' to 'double' [-Wdouble-promotion]
+        To = sqrt(sqrt(irData/(alphaCompensated * (1 - params->ksTo * 273.15) + Sx) + taTr)) - 273.15;                     
+                               ^~~~~~~~~~~~~~~~ ~
+MLX90621.c(214): warning: implicit conversion increases floating-point precision: 'float' to 'double' [-Wdouble-promotion]
+        To = sqrt(sqrt(irData/(alphaCompensated * (1 - params->ksTo * 273.15) + Sx) + taTr)) - 273.15;                     
+                       ^~~~~~~
+MLX90621.c(279): warning: implicit conversion loses floating-point precision: 'double' to 'float' [-Wimplicit-float-conversion]
+    ta = sqrt(ta)-params->kT1;
+       ~ ~~~~~~~~^~~~~~~~~~~~
+MLX90621.c(279): warning: implicit conversion increases floating-point precision: 'const float' to 'double' [-Wdouble-promotion]
+    ta = sqrt(ta)-params->kT1;
+                 ~~~~~~~~~^~~
+MLX90621.c(279): warning: implicit conversion increases floating-point precision: 'float' to 'double' [-Wdouble-promotion]
+    ta = sqrt(ta)-params->kT1;
+         ~~~~ ^~
+MLX90621.c(305): warning: implicit conversion loses integer precision: 'int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+    data = (eeData[219]<<8) + eeData[218];
+         ~ ~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~
+MLX90621.c(306): warning: implicit conversion changes signedness: 'uint16_t' (aka 'unsigned short') to 'int16_t' (aka 'short') [-Wsign-conversion]
+    vth25 = data;
+          ~ ^~~~
+MLX90621.c(309): warning: implicit conversion from 'int' to 'float' may lose precision [-Wimplicit-int-float-conversion]
+    kt1 = (eeData[221]<<8) + eeData[220];
+        ~ ~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~
+MLX90621.c(315): warning: implicit conversion from 'int' to 'float' may lose precision [-Wimplicit-int-float-conversion]
+    kt1 = kt1 / (1<<kt1Scale);  
+              ~  ~^~~~~~~~~~
+MLX90621.c(317): warning: implicit conversion from 'int' to 'float' may lose precision [-Wimplicit-int-float-conversion]
+    kt2 = (eeData[223]<<8) + eeData[222];
+        ~ ~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~
+MLX90621.c(323): warning: implicit conversion from 'int' to 'float' may lose precision [-Wimplicit-int-float-conversion]
+    kt2 = kt2 / (1<<kt2Scale); 
+              ~  ~^~~~~~~~~~
+MLX90621.c(346): warning: implicit conversion from 'int' to 'float' may lose precision [-Wimplicit-int-float-conversion]
+    KsTa = (eeData[231] << 8) + eeData[230];
+         ~ ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~
+MLX90621.c(371): warning: implicit conversion from 'int' to 'float' may lose precision [-Wimplicit-int-float-conversion]
+    mlx90621->ksTo = mlx90621->ksTo / (1 << scale);
+                                    ~  ~~^~~~~~~~
+MLX90621.c(388): warning: implicit conversion loses integer precision: 'int' to 'uint8_t' (aka 'unsigned char') [-Wimplicit-int-conversion]
+    resScale = 3 - MLX90621_GetCurResolution();
+             ~ ~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+MLX90621.c(389): warning: implicit conversion from 'int' to 'float' may lose precision [-Wimplicit-int-float-conversion]
+    alphaCom = (eeData[225]<<8) + eeData[224];
+             ~ ~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~
+MLX90621.c(390): warning: implicit conversion loses floating-point precision: 'double' to 'float' [-Wimplicit-float-conversion]
+    alphaScale = pow(2,alphaScale);
+               ~ ^~~~~~~~~~~~~~~~~
+MLX90621.c(390): warning: implicit conversion increases floating-point precision: 'float' to 'double' [-Wdouble-promotion]
+    alphaScale = pow(2,alphaScale);
+                 ~~~   ^~~~~~~~~~
+MLX90621.c(391): warning: implicit conversion loses floating-point precision: 'double' to 'float' [-Wimplicit-float-conversion]
+    deltaScale = pow(2,deltaScale);
+               ~ ^~~~~~~~~~~~~~~~~
+MLX90621.c(391): warning: implicit conversion increases floating-point precision: 'float' to 'double' [-Wdouble-promotion]
+    deltaScale = pow(2,deltaScale);
+                 ~~~   ^~~~~~~~~~
+MLX90621.c(398): warning: implicit conversion from 'int' to 'float' may lose precision [-Wimplicit-int-float-conversion]
+        alphaTemp = (alphaCom + temp)/(1<<resScale);
+                                     ~ ~^~~~~~~~~~
+MLX90621.c(402): warning: implicit conversion from 'int' to 'float' may lose precision [-Wimplicit-int-float-conversion]
+    alphaTemp = (eeData[215]<<8) + eeData[214];
+              ~ ~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~
+MLX90621.c(405): warning: implicit conversion from 'int' to 'float' may lose precision [-Wimplicit-int-float-conversion]
+    mlx90621->cpAlpha = alphaTemp / (1<<resScale);
+                                  ~  ~^~~~~~~~~~
+MLX90621.c(422): warning: implicit conversion loses integer precision: 'int' to 'uint8_t' (aka 'unsigned char') [-Wimplicit-int-conversion]
+    resScale = 3 - MLX90621_GetCurResolution();
+             ~ ~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+MLX90621.c(423): warning: implicit conversion loses floating-point precision: 'double' to 'float' [-Wimplicit-float-conversion]
+    bScale = pow(2, (float)(bScale+resScale));
+           ~ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+MLX90621.c(423): warning: implicit conversion increases floating-point precision: 'float' to 'double' [-Wdouble-promotion]
+    bScale = pow(2, (float)(bScale+resScale));
+             ~~~    ^~~~~~~~~~~~~~~~~~~~~~~~
+MLX90621.c(425): warning: implicit conversion loses integer precision: 'int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+    data = (eeData[209]<<8) + eeData[208];
+         ~ ~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~
+MLX90621.c(426): warning: implicit conversion changes signedness: 'uint16_t' (aka 'unsigned short') to 'int16_t' (aka 'short') [-Wsign-conversion]
+    aCom = data;    
+         ~ ^~~~
+MLX90621.c(430): warning: implicit conversion from 'int' to 'float' may lose precision [-Wimplicit-int-float-conversion]
+        aTemp = eeData[i]<<aScale; 
+              ~ ~~~~~~~~~^~~~~~~~
+MLX90621.c(438): warning: implicit conversion from 'int' to 'float' may lose precision [-Wimplicit-int-float-conversion]
+        mlx90621->ai[i] = (aCom + aTemp) / (1<<resScale);
+                                         ~  ~^~~~~~~~~~
+MLX90621.c(442): warning: implicit conversion from 'int' to 'float' may lose precision [-Wimplicit-int-float-conversion]
+    aTemp = (eeData[212]<<8) + eeData[211];
+          ~ ~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~
+MLX90621.c(447): warning: implicit conversion from 'int' to 'float' may lose precision [-Wimplicit-int-float-conversion]
+    aTemp = aTemp / (1<<resScale); 
+                  ~  ~^~~~~~~~~~
+MLX90621.c(475): warning: implicit conversion loses integer precision: 'int' to 'uint8_t' (aka 'unsigned char') [-Wimplicit-int-conversion]
+    sa = (slaveAddr << 1);
+       ~  ~~~~~~~~~~^~~~
+MLX90621.c(509): warning: implicit conversion loses integer precision: 'int' to 'uint8_t' (aka 'unsigned char') [-Wimplicit-int-conversion]
+    sa = (slaveAddr << 1);
+       ~  ~~~~~~~~~~^~~~
+MLX90621.c(513): warning: implicit conversion loses integer precision: 'int' to 'uint8_t' (aka 'unsigned char') [-Wimplicit-int-conversion]
+    cmd[3] = nMemAddressRead;
+           ~ ^~~~~~~~~~~~~~~
+MLX90621.c(542): warning: implicit conversion loses integer precision: 'int' to 'uint8_t' (aka 'unsigned char') [-Wimplicit-int-conversion]
+    sa = (slaveAddr << 1);
+       ~  ~~~~~~~~~~^~~~
+MLX90621.c(565): warning: no newline at end of file [-Wnewline-eof]
+}
+ ^
+58 warnings generated.
+linking...
+Program Size: Code=10332 RO-data=340 RW-data=0 ZI-data=3112  
+".\Objects\cft_tts_alpha.axf" - 0 Error(s), 58 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.7.0.pack
+                ARM.CMSIS.5.7.0
+                CMSIS (Cortex Microcontroller Software Interface Standard)
+   * Component: CORE Version: 5.4.0
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.STM32F1xx_DFP.2.3.0.pack
+                Keil.STM32F1xx_DFP.2.3.0
+                STMicroelectronics STM32F1 Series Device Support, Drivers and Examples
+   * Component: Startup Version: 1.0.0
+
+<h2>Collection of Component include folders:</h2>
+  .\RTE\Device\STM32F103C8
+  .\RTE\_Target_1
+  C:\Users\davij\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include
+  C:\Users\davij\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE:5.4.0
+
+   * Component: Keil::Device:Startup:1.0.0
+      Source file:   Device\Source\ARM\startup_stm32f10x_md.s
+      Source file:   Device\Source\system_stm32f10x.c
+      Include file:  RTE_Driver\Config\RTE_Device.h
+      Source file:   Device\Source\ARM\STM32F1xx_OPT.s
+Build Time Elapsed:  00:00:04
+</pre>
+</body>
+</html>
